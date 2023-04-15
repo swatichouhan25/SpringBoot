@@ -1,0 +1,48 @@
+<beans  
+    xmlns="http://www.springframework.org/schema/beans"  
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+    xmlns:p="http://www.springframework.org/schema/p"  
+    xsi:schemaLocation="http://www.springframework.org/schema/beans  
+               http://www.springframework.org/schema/beans/spring-beans-3.0.xsd"> 
+
+<!--<bean id="number" class="com.autowiring.ContactNumber">
+	<property name="number" value="987654332"/>
+</bean>-->
+
+<bean id="emp1" class="com.autowiring.Employee" autowire="byType">
+	<property name="id" value="101"/>
+	<property name="name" value="Swati"/>
+	<property name="salary" value="100000"/>
+</bean>
+
+
+<bean id="contactNumber" class="com.autowiring.ContactNumber">
+	<property name="number" value="897654332"/>
+</bean>
+
+<bean id="person" class="com.autowiring.Person" autowire="byName">
+	<property name="name" value="Siya"/>
+	<property name="dob" value="15th June"/>
+</bean>
+
+<bean id="address" class="com.autowiring.Address">
+	<property name="street" value="Ring Road"/>
+	<property name="city" value="Ujjain"/>
+	<property name="state" value="MP"/>
+</bean>
+
+<bean id="address1" class="com.autowiring.Address">
+	<property name="street" value="Ring Road"/>
+	<property name="city" value="Indore"/>
+	<property name="state" value="MP"/>
+</bean>
+
+<bean id="p2" class="com.autowiring.Person" autowire="constructor">
+	<constructor-arg index="0" value="Sumit"/>
+	<constructor-arg index="1" value="8th feb"/>
+	
+</bean>
+
+
+
+ </beans> 

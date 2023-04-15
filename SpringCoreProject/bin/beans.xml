@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<beans  
+    xmlns="http://www.springframework.org/schema/beans"  
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+    xmlns:p="http://www.springframework.org/schema/p"  
+    xsi:schemaLocation="http://www.springframework.org/schema/beans  
+               http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">  
+ 
+ 	 <bean id="greet" class="com.demo.Greeting">
+		  <property name="message" value="Hello!!! Welcome To Spring"/>
+	  </bean>
+	  
+	  <bean id="emp1" class="com.demo.Employee">
+	  <constructor-arg index="0" value="101"/>
+	   <constructor-arg index="1" value="Swati"/>
+	    <constructor-arg index="2" value="98000"/>
+	    </bean>
+	    
+	    
+	     
+	  <bean id="emp2" class="com.demo.Employee">
+	  <constructor-arg index="0" value="102"/>
+	   <constructor-arg index="1" value="Siya"/>
+	    <constructor-arg index="2" value="98000"/>
+	    </bean>
+	    
+	    <bean id="emp3" class="com.demo.Employee">
+			<property name="id" value="103"/>
+			<property name="name" value="Raghav"/>
+			<property name="salary" value="68900"/>
+		</bean>
+		
+		<bean id="address1" class="com.demo.Address">
+			<property name="street" value="Ring Road"/>
+			<property name="city" value="Ujjain"/>
+			<property name="state" value="MP"/>
+		</bean>
+		
+		<bean id="address2" class="com.demo.Address">
+			<property name="street" value="Sethi Nagar"/>
+			<property name="city" value="Indore"/>
+			<property name="state" value="MP"/>
+		</bean>
+		
+		<bean id="person1" class="com.demo.Person">
+			<constructor-arg index="0" value="Swati"/>
+			<constructor-arg index="1" value="25th Jan"/>
+			<constructor-arg index="2" ref="address1"/>
+			</bean>
+			
+			
+			<bean id="person2" class="com.demo.Person">
+				<property name="name" value="siya"/>
+					<property name="dob" value="13 May"/>
+						<property name="address" ref="address1"/>
+			</bean>
+			
+			
+			<bean id="person3" class="com.demo.Person">
+				<property name="name" value="Ram"/>
+					<property name="dob" value="13 June"/>
+						<property name="address" ref="address2"/>
+			</bean>
+			
+			
+			<bean id="address3" class="com.demo.Address">
+			<property name="street" value="Rajwada"/>
+			<property name="city" value="Indore"/>
+			<property name="state" value="MP"/>
+			</bean>
+			
+			<bean id="manager1" class="com.demo.Manager">
+				<constructor-arg index="0" value="101"/>
+				<constructor-arg index="1" value="Swati"/>
+				<constructor-arg index="2" value="98000"/>
+				<constructor-arg index="3" >
+					<list>
+						<value>Java Project</value>
+						<value>Spring Project</value>
+						<value>Spring Boot Project</value>
+					</list>
+					</constructor-arg>
+					
+					<constructor-arg index="4">
+						<set>
+							<ref bean="address1"/>
+							<ref bean="address2"/>
+						</set>
+					</constructor-arg>
+					<constructor-arg index="5" >
+						<map>
+							<entry key="Personal_Number" value-ref="contact1"/>
+							<entry key="Office_Number" value-ref="contact2"/>
+						</map>
+					</constructor-arg>
+				</bean>
+			
+			<bean id="manager2" class="com.demo.Manager">
+				<property name="id" value="102"/>
+				<property name="name" value="Siya"/>
+				<property name="salary" value="190000"/>
+				<property name="projects" >
+					<list>
+						<value>HTML Project</value>
+						<value>C++ Project</value>
+						<value>Struts Project</value>
+					</list>
+					</property>
+				
+				<property name="address">
+					<set>
+						<ref bean="address1"/>
+						<ref bean="address2"/>
+					</set>
+				</property>
+				
+				<property name="contactNumber">
+					<map>
+						<entry key="Personal_Number" value-ref="contact3"/>
+							<entry key="Office_Number" value-ref="contact4"/>
+						
+					</map>
+				</property>
+			</bean>
+			
+			<bean id="contact1" class="com.demo.ContactNumber">
+				<property name="number" value="1234556789"/>
+			</bean>
+			
+			<bean id="contact2" class="com.demo.ContactNumber">
+				<property name="number" value="98765433"/>
+			</bean>
+			
+			<bean id="contact3" class="com.demo.ContactNumber">
+				<property name="number" value="78976789"/>
+			</bean>
+			
+			<bean id="contact4" class="com.demo.ContactNumber">
+				<property name="number" value="909556789"/>
+			</bean>
+			
+			<bean id="swatipractice" class="com.demo.Person">
+				<constructor-arg index="0" value="Rishi"/>
+				<constructor-arg index="1" value="26 july"/>
+				<constructor-arg index="2" ref="address3"/>
+				
+			</bean>
+			
+			<bean id="student" class="com.demo.StudentAssignment">
+				<constructor-arg index="0" value="101"/>
+					<constructor-arg index="1" value="Granth"/>
+						<constructor-arg index="2" value="95"/>
+							<constructor-arg index="3" value="A"/>
+							<constructor-arg index="4" >
+								<list>
+									<value>Math</value>
+									<value>English</value>
+									<value>Hindi</value>
+									<value>Science</value>
+								</list>
+								</constructor-arg>		
+			</bean>
+			
+			<bean id="account" class="com.demo.AccountAssignment">
+				<constructor-arg index="0" value="12345"/>
+				<constructor-arg index="1" value="Shashank"/>
+				<constructor-arg index="2" value="Saving"/>
+				<constructor-arg index="3" value="4/13/23"/>
+				<constructor-arg index="4" value="250000"/>
+				<constructor-arg index="5" >
+					<map>
+						<entry key="Local Address" value-ref="address3"></entry>
+						<entry key="Permanent Address" value-ref="address2"></entry>
+					</map>
+					
+				</constructor-arg>
+				
+			</bean>
+			
+		
+</beans>
